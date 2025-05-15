@@ -25,5 +25,4 @@ being inside a card with annotatedStrings give readability for the users.
 
 # Self feedback 
 
-In this specific instance, due to the time constraints, the StarWarsRepository contains all of the endpoint calls, but I think it would be better if individual screens had individual repositories in order to adhere to
-SOLID principles better.
+In this specific instance, due to the time constraints, the StarWarsRepository contains all of the endpoint calls, but I think it would be better if individual screens had individual repositories in order to adhere to SOLID principles better. I'd also like to utilise TalkBack features through contentDescription to make sure to make the app more accessible to a wider audience.
