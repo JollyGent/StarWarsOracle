@@ -65,6 +65,7 @@ fun HomeScreen(navController: NavController) {
         )
         Button(
 
+            modifier = Modifier.padding(4.dp),
             colors = ButtonDefaults.buttonColors(Color.Yellow),
 
             //Put the textfield in lowercase, remove whitespaces and then check whether it's a valid endpoint.
