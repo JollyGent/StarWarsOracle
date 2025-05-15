@@ -14,7 +14,7 @@ dependencies. As opposed to Dagger Hilt was used as it was more approachable and
 from the rest of the application, thus improving code flexibility as it further allows easier expansion and maintainability.
 
 As for the screens created using the JetPack Compose framework was used as opposed to Data Binding, due to the fact that JetPack Compose is more of a scalable solution and more efficient in performance.
-The HomeScreen is a simple page with a TextField, where users can enter either vehicles, films or starships to navigate to - which happens in separate screens with respective viewmodels. Input validation is
+The HomeScreen is a simple page with a TextField with a Button to search, where users can enter either vehicles, films or starships to navigate to - which happens in separate screens with respective viewmodels. Input validation is
 also used to make sure that the user inputs are valid, and an error message is shown if invalid endpoints are written.
 
 On every results page, there are two buttons in a row which determines how the list is sorted, utilising the sortBy() method to make sure that users can choose to sort the list by title/name if they wished.
