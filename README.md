@@ -3,6 +3,10 @@
 An Encyclopedia that lets the user search for information about the canon universe of the Star Wars franchise. It's helpful for people just getting into Star Wars, or a fun past time for those hard core fans who want to read more
 about the lore.
 
+![SmartSelect_20250515_201113_StarWarsOracle](https://github.com/user-attachments/assets/21ad563e-7d1c-452a-b3e9-e673e16c6c98)
+
+
+
 ## How It's Made:
 **Tech used:** Kotlin, MVVM architecture with Hilt and JetPack Compose
 
