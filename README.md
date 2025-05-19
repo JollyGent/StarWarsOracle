@@ -33,6 +33,6 @@ In this specific instance, due to the time constraints, the StarWarsRepository c
 
 ## Patch notes / changes 
 
-Note that these changes are done in my own time and are committed AFTER the 16th of May, 2025 past the deadline in order to better the code. I will label the dates to make the clear everytime I make a change.
+Note that these changes are done in my own time and are committed AFTER the 16th of May, in order to better the code. I will label the dates to make that clear everytime I make a change.
 
 **19/05/25** - Created and utilised String resources instead of hardcoding string values where necessary in order to make the code more scalable and therefore, future changes can be done directly inside the string.xml file as opposed to the actual screens.
