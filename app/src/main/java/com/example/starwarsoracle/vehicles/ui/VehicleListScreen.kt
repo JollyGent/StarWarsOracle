@@ -26,12 +26,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.starwarsoracle.R
 import com.example.starwarsoracle.vehicles.VehicleItem
 import com.example.starwarsoracle.vehicles.ui.VehicleListViewModel
 
@@ -63,7 +66,7 @@ fun VehicleListScreen() {
                             sorted.addAll(state.sortedBy { it.name })
                         }
                     ) {
-                        Text("Sort by Name", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_name), color = Color.Black)
                     }
                     Button(
                         modifier = Modifier.padding(4.dp),
@@ -75,7 +78,7 @@ fun VehicleListScreen() {
                             sorted.addAll(state)
                         }
                     ) {
-                        Text("Sort by Default", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_default), color = Color.Black)
                     }
 
                 }
@@ -107,6 +110,8 @@ fun VehicleListScreen() {
 @Composable
 fun InfoCard(vehicle: VehicleItem) {
 
+    val vehicleStrings = stringArrayResource(R.array.vehicle_and_starship_tags)
+
     Card(elevation = CardDefaults.cardElevation(
         defaultElevation = 6.dp
     ), shape = MaterialTheme.shapes.medium,
@@ -117,7 +122,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Name: ")
+                    append(vehicleStrings[0])
                 }
                 append("${vehicle.name}")
             },
@@ -128,7 +133,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Model: ")
+                    append(vehicleStrings[1])
                 }
                 append("${vehicle.model}")
             },
@@ -139,7 +144,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Manufacturer: ")
+                    append(vehicleStrings[2])
                 }
                 append("${vehicle.manufacturer}")
             },
@@ -150,7 +155,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Cost in credits: ")
+                    append(vehicleStrings[3])
                 }
                 append("${vehicle.costInCredits}")
             },
@@ -162,7 +167,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Length: ")
+                    append(vehicleStrings[4])
                 }
                 append("${vehicle.length}")
             },
@@ -174,7 +179,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Crew: ")
+                    append(vehicleStrings[5])
                 }
                 append("${vehicle.crew}")
             },
@@ -186,7 +191,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Passengers: ")
+                    append(vehicleStrings[6])
                 }
                 append("${vehicle.passengers}")
             },
@@ -198,7 +203,7 @@ fun InfoCard(vehicle: VehicleItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Cargo capacity: ")
+                    append(vehicleStrings[7])
                 }
                 append("${vehicle.cargoCapacity}")
             },

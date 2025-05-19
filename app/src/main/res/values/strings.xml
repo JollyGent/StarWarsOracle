@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">StarWarsOracle</string>
+
+    <string name="search_button_name">Search</string>
+    <string name="sort_by_default">Sort by Default</string>
+    <string name="sort_by_title">Sort by Title</string>
+    <string name="sort_by_name">Sort by Name</string>
+
+
+    <string name="title">Star Wars Oracle</string>
+    <string name="sub_title">Your little Garindan to the Canon Universe.</string>
+    <string name="search_label">Enter a keyword…</string>
+    <string name="search_placeholder">Films, vehicles, or…starships!</string>
+
+    <string name="search_error">It\'s a Trap! - invalid keyword!</string>
+
+    <string-array name="vehicle_and_starship_tags">
+        <item>Name :</item>
+        <item>Model: </item>
+        <item>Manufacturer: </item>
+        <item>Cost in credits: </item>
+        <item>Length: </item>
+        <item>Crew: </item>
+        <item>Passengers: </item>
+        <item>Cargo capacity: </item>
+    </string-array>
+
+    <string-array name="film_tags">
+        <item>Episodes: </item>
+        <item>Director: </item>
+        <item>Producer(s): </item>
+        <item>Released: </item>
+    </string-array>
+
 </resources>

@@ -26,13 +26,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.starwarsoracle.R
 import com.example.starwarsoracle.starships.StarshipItem
 
 
@@ -64,7 +66,7 @@ fun StarshipListScreen() {
                             sorted.addAll(state.sortedBy { it.name })
                         }
                     ) {
-                        Text("Sort by Name", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_name), color = Color.Black)
                     }
                     Button(
                         modifier = Modifier.padding(4.dp),
@@ -76,7 +78,7 @@ fun StarshipListScreen() {
                             sorted.addAll(state)
                         }
                     ) {
-                        Text("Sort by Default", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_default), color = Color.Black)
                     }
 
                 }
@@ -108,6 +110,8 @@ fun StarshipListScreen() {
 @Composable
 fun InfoCard(starship: StarshipItem) {
 
+    val starshipStrings = stringArrayResource(R.array.vehicle_and_starship_tags)
+
     Card(elevation = CardDefaults.cardElevation(
         defaultElevation = 6.dp
     ), shape = MaterialTheme.shapes.medium,
@@ -118,7 +122,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Name: ")
+                    append(starshipStrings[0])
                 }
                 append("${starship.name}")
             },
@@ -129,7 +133,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Model: ")
+                    append(starshipStrings[1])
                 }
                 append("${starship.model}")
             },
@@ -140,7 +144,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Manufacturer: ")
+                    append(starshipStrings[2])
                 }
                 append("${starship.manufacturer}")
             },
@@ -151,7 +155,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Cost in credits: ")
+                    append(starshipStrings[3])
                 }
                 append("${starship.costInCredits}")
             },
@@ -163,7 +167,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Length: ")
+                    append(starshipStrings[4])
                 }
                 append("${starship.length}")
             },
@@ -175,7 +179,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Crew: ")
+                    append(starshipStrings[5])
                 }
                 append("${starship.crew}")
             },
@@ -187,7 +191,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Passengers: ")
+                    append(starshipStrings[6])
                 }
                 append("${starship.passengers}")
             },
@@ -199,7 +203,7 @@ fun InfoCard(starship: StarshipItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Cargo capacity: ")
+                    append(starshipStrings[7])
                 }
                 append("${starship.cargoCapacity}")
             },

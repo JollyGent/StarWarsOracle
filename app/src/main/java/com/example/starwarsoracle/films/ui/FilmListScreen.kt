@@ -1,7 +1,5 @@
 package com.example.starwarsoracle.films.ui
 
-import android.content.res.Resources.Theme
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,7 +16,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,6 +26,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -36,6 +35,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.starwarsoracle.R
 import com.example.starwarsoracle.films.data.model.FilmItem
 
 
@@ -68,7 +68,7 @@ fun FilmListScreen() {
                             sorted.addAll(state.sortedBy { it.title })
                         }
                     ) {
-                        Text("Sort by Title", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_title), color = Color.Black)
                     }
                     Button(
                         modifier = Modifier.padding(4.dp),
@@ -80,7 +80,7 @@ fun FilmListScreen() {
                             sorted.addAll(state)
                         }
                     ) {
-                        Text("Sort by Default", color = Color.Black)
+                        Text(stringResource(R.string.sort_by_default), color = Color.Black)
                     }
 
                 }
@@ -113,6 +113,8 @@ fun FilmListScreen() {
 @Composable
 fun InfoCard(film : FilmItem) {
 
+    val filmStrings = stringArrayResource(R.array.film_tags)
+
     Card(elevation = CardDefaults.cardElevation(
         defaultElevation = 6.dp
     ), shape = MaterialTheme.shapes.medium,
@@ -124,7 +126,7 @@ fun InfoCard(film : FilmItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                     ) {
-                    append("Episodes: ")
+                    append(filmStrings[0])
                 }
                     append("${film.episodeId}")
             },
@@ -135,7 +137,7 @@ fun InfoCard(film : FilmItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Director: ")
+                    append(filmStrings[1])
                 }
                 append("${film.director}")
             },
@@ -146,7 +148,7 @@ fun InfoCard(film : FilmItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Producer(s):")
+                    append(filmStrings[2])
                 }
                 append("${film.producer}")
             },
@@ -157,7 +159,7 @@ fun InfoCard(film : FilmItem) {
                 withStyle(
                     style= SpanStyle(fontWeight = FontWeight.Bold)
                 ) {
-                    append("Released: ")
+                    append(filmStrings[3])
                 }
                 append("${film.releaseDate}")
             },

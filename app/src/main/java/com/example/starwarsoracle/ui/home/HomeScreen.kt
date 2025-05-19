@@ -17,11 +17,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.starwarsoracle.R
 import com.example.starwarsoracle.navigation.NavigationRoute
 import com.example.starwarsoracle.utils.Constants
 
@@ -30,6 +33,9 @@ fun HomeScreen(navController: NavController) {
     var search by remember { mutableStateOf("") }
 
     var searchError by remember { mutableStateOf("") }
+
+    val context= LocalContext.current
+
 
     Column (
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -53,11 +59,11 @@ fun HomeScreen(navController: NavController) {
             onValueChange = {search = it},
             label = {
                 Text(
-                    searchError.ifEmpty { "Enter a keyword..." },
+                    searchError.ifEmpty { stringResource(R.string.search_label) },
                     color = if(searchError.isNotEmpty()) Color.Red else Color.Yellow)
             },
             placeholder = {
-                Text("Films, vehicles, or...starships!")
+                Text(stringResource(R.string.search_placeholder))
             },
             colors = TextFieldDefaults.colors(
                 focusedIndicatorColor = Color.Transparent
@@ -80,11 +86,11 @@ fun HomeScreen(navController: NavController) {
                     navController.navigate(NavigationRoute.VehicleListScreen.route)
                 }
                 else {
-                    searchError = "It's a Trap! - invalid keyword!"
+                    searchError = context.getString(R.string.search_error)
                 }
             }
         ) {
-            Text("Search", color = Color.Black)
+            Text(stringResource(R.string.search_button_name), color = Color.Black)
         }
     }
 
