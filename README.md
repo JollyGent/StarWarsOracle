@@ -30,3 +30,9 @@ being inside a card with annotatedStrings give readability for the users.
 # Self feedback 
 
 In this specific instance, due to the time constraints, the StarWarsRepository contains all of the endpoint calls, but I think it would be better if individual screens had individual repositories in order to adhere to SOLID principles better. Will also utilise TalkBack features through contentDescription in the future to make sure to make the app more accessible to a wider audience.
+
+## Patch notes / changes 
+
+Note that these changes are done in my own time and are committed AFTER the 16th of May, 2025 past the deadline in order to better the code. I will label the dates to make the clear everytime I make a change.
+
+**19/05/25** - Created and utilised String resources instead of hardcoding string values where necessary in order to make the code more scalable and therefore, future changes can be done directly inside the string.xml file as opposed to the actual screens.
